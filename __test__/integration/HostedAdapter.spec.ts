@@ -104,7 +104,7 @@ describe('Kibo Payment Gateway - Hosted Adapter ', () => {
       .spyOn(CustomGatewayAdapter.prototype, 'createGiftCard')
       .mockImplementation(async () => ({ action: 'createGiftCard' } as any))
 
-    const response = await request(server).post('/createGiftCard').set('Accept', 'application/json')
+    const response = await request(server).post('/giftcardcreate').set('Accept', 'application/json')
 
     expect(response.body).toEqual({ action: 'createGiftCard' })
     expect(mockCreateGiftCard).toBeCalled()
